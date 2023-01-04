@@ -5,17 +5,24 @@
         static void Main(string[] args)
         {
             int Full_Time = 1;
+            int Rate_Per_Hour = 20;
+            int empHours = 0;
+            int empWage = 0;
+
             Random random= new Random();
             int EmpCheck = random.Next(0,2);
 
-            if(EmpCheck == 1)
+            if(EmpCheck == Full_Time)
             {
-                Console.WriteLine("Employee is Present");
+                empHours = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                empHours = 0;
             }
+
+            empWage = empHours * Rate_Per_Hour;
+            Console.WriteLine("Daily Employee Wage :" +empWage);
         }
     }
 }
