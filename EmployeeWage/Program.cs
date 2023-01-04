@@ -1,29 +1,30 @@
-﻿namespace EmployeeWage
+﻿using System.Reflection.Metadata;
+
+namespace EmployeeWage
 {
     public class Program
     {
+        public const int Full_Time = 1;
+        public const int Part_Time = 2;
+        public const int Rate_Per_Hour = 20;
         static void Main(string[] args)
         {
-            int Full_Time = 1;
-            int Part_Time = 2;
-            int Rate_Per_Hour = 20;
             int empHours = 0;
             int empWage = 0;
+
 
             Random random= new Random();
             int EmpCheck = random.Next(0,3);
 
-            if(EmpCheck == Full_Time)
+            switch (EmpCheck)
             {
-                empHours = 8;
-            }
-            else if(EmpCheck == Part_Time)
-            {
-                empHours = 4;
-            }
-            else
-            {
-                empHours = 0;
+                case Full_Time:
+                    empHours = 8; break;
+                case Part_Time:
+                    empWage = 4; break;
+                default:
+                    empHours = 0;
+                        break;
             }
 
             empWage = empHours * Rate_Per_Hour;
