@@ -6,7 +6,7 @@
     public const int Working_Days = 20;
     public const int Max_Working_Houors = 100;
 
-    static void Main(string[] args)
+    public static int computeEmpWage()
     {
         int EmpHours = 0;
         int Total_Hours = 0;
@@ -33,6 +33,11 @@
         }
         int EmpWedge = Total_Hours * Wedge_Rate;
         Console.WriteLine("Total Wedge :" + EmpWedge);
+        return EmpWedge;
     }
 
+    static void Main(string[] args)
+    {
+        computeEmpWage();
+    }
 }
